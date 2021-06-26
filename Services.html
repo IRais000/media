@@ -225,7 +225,287 @@ Le Directeur est secondé par deux directeurs adjoints nommés sur sa propositio
         <p>Design and code <a href="#">Blali Houda and imane raiss</a></p>
        
     </footer>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap');
 
+* {
+    box-sizing: border-box;
+    /*  by default when defining the width of the element it refers to the content , addig this allows the max width to include pading as well*/
+    -webkit-font-smoothing: antialiased;
+}
+
+html {
+    font-size: 18px;
+    line-height: 1.5;
+}
+.header__navbar {
+    margin: 10px;
+    background-color: rgb(163, 163, 163);
+    height: 80px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.header__navbar__logo__title {
+    color: #fff;
+    font-size: 24px;
+    margin-left: 20px;
+    font-family: 'Dancing Script', cursive;
+
+}
+.header__navbar__menu__link{
+    margin-left: 30px;
+    color: #fff;
+    text-decoration: none;
+    margin-right: 25px;
+}
+
+
+
+
+/*apply only if condtion is trues*/
+@media (max-width: 600px) {
+    html {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    html{
+        font-size: 12px;
+    }
+}
+
+body{
+    margin: 0;
+    font-family: Ubuntu, sans-serif;
+    /*serifs: the lttle small edges in the letters,try it?*/
+    color: #fff;
+    
+/*    the color gets inherited but applying a color to a tag will override*/
+}
+
+header {
+    background-color: #333;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /*moves the box to the middle with the text*/
+}
+
+h1 {
+    text-align: center;
+    margin: 4rem 0 0 0;
+    /*clockwise positions top right bottom left*/
+    color: #999;
+    line-height: 1;
+    text-transform: uppercase;
+    font-size: 2.8rem; /*rem: 2.8 what's in root elements' font size*/
+    letter-spacing: 6px;
+}
+
+section{
+    height: 100vh;
+    /*fixed to the top left corner, needs a fix?*/
+    background-position: center;
+    background-size: cover;
+     /*cover: as small as possible without leaving space*/
+    background-attachment: fixed;
+    /*stopsbackground from moving , allows just the elements to move*/
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+    /*  to a lign the text in the center  */
+}
+
+#spring {
+    background-image: url(media1/emi11.jpg);           
+}
+
+#summer {
+    background-image: url(media1/emi3.jpeg);    
+}
+
+#autumn {
+    background-image: url(media1/autumn.jpg);  
+}
+
+#winter {
+    background-image: url(media1/emi12.jpg);  
+}
+
+/* Animation */
+
+#orbit{
+    width: 300px;
+    height: 300px;
+    border: 1 px solid #555;
+    position: relative;
+    /*the parent being relative allows the others to be positioned aginst it*/
+    border-radius: 50%;
+    animation: orbit 24s linear infinite;
+        /*name time wanted type of speed*/
+}
+
+#sun{
+    background-color: rgb(116, 9, 110);
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    top: 120px;
+    left: 120px;
+    border-radius: 50%;
+}
+
+#earth{
+    position: absolute;
+    width: 28px;
+    height: 28px;
+    background-color: #00BAFF;
+    top: 164px;
+    left: 16px;
+    border-radius: 50%;
+    animation: orbit 2s linear infinite;
+}
+
+#moon{
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    background-color: #999;
+    left: 8px;
+    top: -28px;
+    border-radius: 50%;
+}
+
+/*one way css animate thngs*/
+@keyframes orbit{
+    
+    /*0% is not there cause the last is there an in the smae posiion as the beginning*/
+    100% {
+        transform: rotate(360deg);
+    }
+    
+    
+}
+
+article {
+    background-color: rgba(0,0,0,0.5);
+    /*  te max width of the content no the box  */
+    max-width: 800px;
+    /*  padding does the role of margin but inside the element   */
+    padding: 2rem;
+    margin: 1rem;
+    /*  margin of the box  */
+    border-radius: 8px;
+/*    corners slightly rounded*/
+    transition: transform 1s, opacity 1s;
+}
+
+h2 {
+    margin: 0 0 1rem 0;
+    font-size: 1rem;
+    line-height: 1;
+    letter-spacing: -1px;
+    color: rgba(255, 255, 2555, 0.5)
+}
+
+p {
+   margin: 0;
+   color: rgb(43, 40, 40); 
+}
+ul{
+    color: rgb(71, 68, 68);
+}
+
+/*classes*/
+
+.move-down {
+    opacity: 0;
+    transform: translate(0, 10rem);
+}
+
+footer {
+    background-color: #333;
+    padding: 3rem;
+}
+
+#social {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+/*    from column to row (default flex direction)*/
+    display: flex;
+    justify-content: center;
+    
+}
+
+#social li{
+    margin: 1rem;
+    padding:0;
+}
+
+.icon {
+    display: block;
+    width: 4rem;
+    height: 4rem;
+/*     color of icons*/
+    color: #999;
+    transition: transform 0.3s, color 0.3s;
+}
+
+/*pseudo selector, select when condition met*/
+.icon:hover {
+    transform: scale(1.3);
+}
+
+.facebook:hover {
+    color: #3B5998;
+}
+
+.instagram:hover {
+    color: #F4A818;
+}
+
+.youtube:hover {
+    color: #F00;
+}
+
+.twitter:hover {
+    color: #55ACEE;
+}
+
+/*select paragraph & anchor in footer*/
+
+footer p {
+    text-align: center;
+    color: #888;
+    text-transform: uppercase;
+    margin-top:2rem;
+}
+footer  li{
+    color: rgb(240, 234, 234);
+}
+footer a {
+    color: rgb(143, 143, 148);
+    text-decoration: none;
+    font-weight: 700;
+}
+h3{
+    color: rgb(3, 3, 71); 
+}
+.about .column i {
+    font-size: 30px;
+    text-align: center;
+}
+</style>
     <script src="app2.js"></script>
 <!--    execute after the html loads to recognize evrything and use it-->
 </body>
