@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Connexion</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Josefin+Sans:ital,wght@1,300&family=Rajdhani:wght@400;500&family=Saira+Condensed:wght@300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="inscription.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/noframework.waypoints.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/shortcuts/inview.min.js"></script>
+  <script src="https://kit.fontawesome.com/318499f088.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="header">
+        <div class="header__navbar">
+            <div class="header__navbar__logo">
+                <h1 class="header__navbar__logo__title">e-Learning EMI</h1>
+            </div>
+            <div class="header__navbar__menu" id="nav">
+                <a href="index.html" class="header__navbar__menu__link">e-Learning Emi</a>
+                <a href="Services.html" class="header__navbar__menu__link">Ecole</a>
+                <a href="ecole.html" class="header__navbar__menu__link">Services</a>
+                <a href="Connect.html" class="header__navbar__menu__link">Se connecter</a>
+            </div>
+        </div>
+    </div>
+
+    <section class="section">
+    
+        <div class="container">
+            <div class="logo">
+                <i class="user"></i>
+            </div>
+            <div class="tab-body" data-id="connexion">
+                <form action="connexion.php" method="post">
+                    <div class="row">
+                        <i class="user"></i>
+                        <input type="email" class="input" placeholder="Adresse Mail">
+                    </div>
+                    <div class="row">
+                        <i class="user"></i>
+                        <input type="password" class="input" placeholder="Mot de passe">
+                    </div>
+                    <a href="#" class="link">Mot de passe oublié ?</a>
+                    <button class="btn" type="button">Connexion</button>
+    
+                </form>
+            </div>
+            <div class="tab-body" data-id="inscirption"><a href="inscription.php"></a></div>
+            <div class="tab-footer">
+                <a class="tab-link " data-ref="inscirption" href="inscrire.html">Inscription</a>
+            </div>
+        </div>    
+    </section>
+    <style>
+        *{
+    box-sizing: border-box;
+}
+body {
+    margin: 0px;
+    padding: 0px;
+}
+
+.header__navbar {
+    margin: 10px;
+    background-color: #2b384f;
+    height: 80px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.header__navbar__logo__title {
+    color: #fff;
+    font-size: 24px;
+    margin-left: 20px;
+    font-family: 'Dancing Script', cursive;
+
+}
+.header__navbar__menu__link{
+    margin-left: 30px;
+    color: #fff;
+    text-decoration: none;
+    margin-right: 25px;
+}
+/* ................................................. */
+.section{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #7aacef;
+}
+.container{
+    position: relative;
+    width: 40%;
+    height: 470px;
+    background-color: #f0f6fb;
+    padding: 3%;
+    border-radius: 10px;
+    font-size: 18px;
+}
+.logo{
+    position: absolute;
+    top: 2%;
+    left: 50%;
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    font-size: 1.8em;
+    transform: translate(-50%,0);
+    box-shadow: 0 5px 5px #ccc;
+    background-color: #6ba1f9;
+    color: #f0f6fb;
+}
+/*.tab-body{
+    height: 280px;
+    padding: 15% 5%;
+    margin-top: 5%;
+    background-color: #fff;
+    color: #82ade6de;
+    box-shadow: 0px 5px 10px #7c8395;
+    border-radius: 30px;
+    font-size: 19px;
+}*/
+.row{
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #7aacef;
+    padding: 1.8% 0;
+    margin: 20px 0;
+}
+.row .input {
+    width: 90%;
+    border: none;
+    outline: none;
+    color: #6ba1f9;
+    font-weight: 550;
+}
+.input::placeholder{
+    color: black;
+}
+.link{
+    display: inline-block;
+    font-size: 14px;
+    width: 100%;
+    text-decoration: none;
+    color: #2b384f;
+    text-align: right;
+}
+.link:hover{
+    text-decoration: underline;
+}
+.btn{
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translate(-50%,50%);
+    width: 120px;
+    height: 45px;
+    border-radius: 50px;
+    background-color: #2b384f;
+    border: none;
+    outline: none;
+    color: #fff;
+    cursor: pointer;
+}
+
+.tab-body.active{
+    display: block;
+}
+.tab-footer{
+    position: absolute;
+    bottom: 5%;
+    left: 50%;
+    transform: translate(-50%,0);
+    height: 30px;
+}
+.tab-link{
+    text-decoration: none;
+    color: #6ba1f9;
+    font-weight: bold;
+    margin-left: 5px;
+    
+}
+.tab-link.active{
+    font-weight: bold;
+    margin-right: 25px;
+    
+}
+    </style>
+
+    <script src="inscription.js"></script>
+</body>

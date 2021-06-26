@@ -1,0 +1,317 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700;900&display=swap');
+
+* {
+    box-sizing: border-box;
+    /*  by default when defining the width of the element it refers to the content , addig this allows the max width to include pading as well*/
+    -webkit-font-smoothing: antialiased;
+}
+
+html {
+    font-size: 18px;
+    line-height: 1.5;
+    font-family: 'Saira Condensed', sans-serif;
+}
+
+body {
+    margin: 0;
+    font-family: 'Roboto Slab', sans-serif;
+    color: #EDFBFF;
+    background-color: #1a1a1a;
+}
+
+p, h2 {
+    margin: 0;
+    text-align: center;
+}
+
+h2 {
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 1.3px;
+    padding: 4rem 0 1rem 0;
+    background-repeat: no-repeat;
+    background-position: center top;    
+}
+
+a {
+    /*  remove the lines from all anchores  */
+    text-decoration: none;
+    color: inherit;
+}
+
+
+header {
+    height: 100vh;
+    background-image: url(image/hum.jpg);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /*an elemet will scroll, when top boundary of the element reaches the top element of the view stops moving/scrolling*/
+    position: sticky;
+    top: 0; /*how far from top we want it to stick*/
+}
+
+h1 {
+    font-weight: 400;
+    text-align: center;
+}
+
+h1 span {
+    display: block;
+}
+
+#logo{
+    text-align: center;
+    color: #FFF;
+    font-size: 5rem;
+    line-height: 1;
+    font-weight: 900;
+    font-family: 'Dancing Script', cursive;
+}
+
+#burger {
+    width: 60px;
+    height: 45px;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    transform: scale(0.8);
+    cursor: pointer;
+    /*  move things up and down  */
+    z-index: 5;
+}
+
+#burger span {
+    display: block;
+    width: 100%;
+    height: 9px;
+    background-color: #fff;
+    position: absolute;
+    transition: transform 0.2s, top 0.2s, opacity 0.2s;
+}
+
+#burger span:nth-child(1) {
+    top: 0px;
+}
+
+#burger span:nth-child(2) {
+    top: 18px;
+}
+
+#burger span:nth-child(3) {
+    top: 18px;
+}
+
+#burger span:nth-child(4) {
+    top: 36px;
+}
+
+#burger.open span:nth-child(1) {
+    top: 18px;
+    opacity: 0;
+}
+
+#burger.open span:nth-child(2) {
+    transform: rotate(45deg);
+}
+
+#burger.open span:nth-child(3) {
+    transform: rotate(-45deg);
+}
+
+#burger.open span:nth-child(4) {
+    top: 18px;
+    opacity: 0;
+}
+
+nav {
+    position:absolute;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0,0,0,0.5);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0.3s, opacity 0.3s;
+    z-index: 4;
+}
+
+nav.show {
+    visibility: visible;
+    opacity: 1;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 4rem 0 0 0;
+    text-align: center;
+    background-repeat: no-repeat;
+    background-position: center top;
+    
+}
+
+nav li {
+    font-size: 1.4rem;
+    font-weight: 800;
+    margin-bottom: 1.2rem;
+}
+
+nav a {
+    color: #bbb;
+    display: block;
+    transition: transform 0.3s, color 0.3s;
+}
+
+nav a:hover {
+    color: #fff;
+    transform: scale(1.3);
+}
+
+.hide {
+    opacity: 0;
+}
+
+main {
+    position: relative;
+}
+
+section{
+    height: 100vh;
+    /*fixed to the top left corner*/
+    background-position: center;
+    background-size: cover;
+     /*cover: as small as possible without leaving space*/
+    background-attachment: fixed;
+    /*stops background from moving , allows just the elements to move*/
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+article {
+    background-color: rgba(0,0,0,0.5);
+    /*  te max width of the content no the box  */
+    max-width: 800px;
+    /*  padding does the role of margin but inside the element   */
+    padding: 2rem;
+    margin: 1rem;
+    /*  margin of the box  */
+    border-radius: 8px;
+/*    corners slightly rounded*/
+    transition: transform 1s, opacity 1s;
+}
+
+#about-1 {
+    background-image: url(image/white.png); 
+    height: auto;          
+}
+
+#about-2 {
+    background-image: url(image/gray.jpg);
+    height: 600px;
+}
+#about-3 {
+    background-image: url(image/white.png);
+    height: 100px;
+}
+#about-4 {
+    background-image: url(image/gray.jpg);
+    min-height: 600px;
+}
+
+.move-down {
+    opacity: 0;
+    transform: translate(0, 10rem);
+}
+
+#grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 1fr;
+    max-width: 1200px;
+    margin: 1rem 2.5rem 1rem 2.5rem;
+    justify-content: center;
+    align-items: center;
+}
+
+#one img{
+    display: block;
+    width: 120px;
+    height: 77px;
+    object-fit: cover;
+    margin-top: 10rem 0 0 10rem;
+}
+#yes img{
+    display: block;
+    width: 130px;
+    height: 110px;
+    object-fit: cover;
+    margin-left: 500px;
+}
+
+#grid p{
+    text-align: center;
+    color: rgba(116, 109, 109);
+    padding: 1rem;
+}
+#grid h2{
+    color: rgb(73, 199, 248);
+}
+#yes1 h1{
+    color: rgb(73, 199, 248);
+    text-align: center;
+    text-transform: uppercase;
+}
+.slider{
+    width: 286px;
+    overflow: hidden;
+    margin: 150px auto;
+
+}
+.slides{
+    width: calc(286px * 2);
+    animation: glisse 10s infinite;
+}
+.slide {
+    float: left;
+}
+
+@keyframes glisse {
+    0% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(-286px);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+#trait {
+    height: 5px;
+    background-color: rgb(73, 199, 248);
+}
+#about-5{
+    height: 550px;
+    background-image: url(image/cadre3.png);
+}
+#vid1 p{
+    color: rgb(55, 55, 56);
+    font-family: 'Dancing Script', cursive;
+    font-size: 3rem;
+}
+
+footer {
+    background-color: rgb(15, 17, 17);
+    position: relative;
+    padding: 4rem;
+    
+}
